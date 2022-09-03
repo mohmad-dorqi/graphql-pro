@@ -1,14 +1,14 @@
 
 import './App.css';
-import { gql,useQuery } from '@apollo/client';
+import Header from './layout/Header';
+
 
 
 function App() {
-  const {data}= useQuery(QUERY)
-  console.log(data);
+ 
   return (
-    <div className="App">
-    
+    <div >
+       <Header />
     </div>
   );
 }
