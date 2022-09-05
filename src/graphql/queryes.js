@@ -32,16 +32,7 @@ query  {
       url
     }
     slug
-    about {
-      text
-    }
-    articles {
-      photo {
-        url
-      }
-      slug
-      writer
-    }
+
   }
 }
 
