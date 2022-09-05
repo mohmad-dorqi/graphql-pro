@@ -22,6 +22,31 @@ query  {
 }
 
 `
+const GET_ATHOR=gql`
+
+query  {
+  athors {
+    id
+    name
+    photo {
+      url
+    }
+    slug
+    about {
+      text
+    }
+    articles {
+      photo {
+        url
+      }
+      slug
+      writer
+    }
+  }
+}
 
 
-export {GET_ARTICLES};
+`
+
+
+export {GET_ARTICLES,GET_ATHOR};
