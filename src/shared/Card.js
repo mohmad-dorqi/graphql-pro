@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
 
 const Cart = ({athor,slug,photo,writer}) => {
-    console.log(athor.photo[0].url);
+   
     return (
        <Card  sx={{boxShadow:'rgba(0,0,0,0.1) 0px 4px 12px', borderRadius:4}} >
         <CardHeader

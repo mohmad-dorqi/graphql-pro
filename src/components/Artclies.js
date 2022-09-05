@@ -5,7 +5,7 @@ import Cart from '../shared/Card';
 import { Grid } from '@mui/material';
 
 const Artclies = () => {
-    const {loading,data,error}= useQuery(GET_ARTICLES)
+    const {loading,data}= useQuery(GET_ARTICLES)
     console.log(data);
     return (
        <Grid container spacing={2}>
