@@ -11,7 +11,7 @@ query  {
     writer
     athor {
       ... on Athor {
-        id
+       
         name
         photo {
           url
