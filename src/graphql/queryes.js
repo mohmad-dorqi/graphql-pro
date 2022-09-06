@@ -38,7 +38,7 @@ query  {
 `
 const GET_AUTHOR_INFO=gql`
       query getAuthor($slug:String!) {
-  athor(where: {slug: slug}) {
+    athor(where: {slug: $slug}) {
     name
     photo {
       url
@@ -47,9 +47,15 @@ const GET_AUTHOR_INFO=gql`
     about {
       text
     }
+    articles {
+      slug
+      writer
+      photo {
+        url
+      }
+    }
   }
 }
-
 `
 
 
