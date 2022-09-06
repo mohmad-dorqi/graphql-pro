@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { GET_ATHOR } from '../graphql/queryes';
 import { useQuery } from '@apollo/client';
 import { Avatar, Divider, Grid, Typography } from '@mui/material';
@@ -14,12 +15,12 @@ const Athor = () => {
                 athors.map((athor,index)=>(
                     <React.Fragment key={athor.id}>
                             <Grid item xs={12} padding={2} >
-                            <a href='#' style={{display:'flex',alignItems:'center',textDecoration:'none'}}>
+                            <Link to={`/authors/${athor.slug}`} style={{display:'flex',alignItems:'center',textDecoration:'none'}}>
                                     <Avatar src={athor.photo[0].url} sx={{marginRight:2}}/>
                                     <Typography component='p' variant='p' color= 'text.secondary'>
                                             {athor.name}
                                     </Typography>
-                            </a>
+                            </Link>
                     </Grid>
                    {
                     index !== athors.length-1 && (

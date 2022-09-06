@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
 
 const Cart = ({athor,slug,photo,writer}) => {
@@ -22,7 +23,9 @@ const Cart = ({athor,slug,photo,writer}) => {
         </CardContent>
         <Divider variant='middle' sx={{margin:'10px'}}/>
         <CardActions>
-            <Button variant='outlined' size='small' sx={{width:'100%',borderRadius: 3}}>Read Artclie</Button>
+            <Link to={`/articles/${slug}`} style={{textDecoration:'none',width:'100%'}}>
+                <Button variant='outlined' size='small' sx={{width:'100%',borderRadius: 3}}>Read Artclie</Button>
+            </Link>
         </CardActions>
 
        </Card>

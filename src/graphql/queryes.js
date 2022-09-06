@@ -35,9 +35,22 @@ query  {
 
   }
 }
-
+`
+const GET_AUTHOR_INFO=gql`
+      query getAuthor($slug:String!) {
+  athor(where: {slug: slug}) {
+    name
+    photo {
+      url
+    }
+    slug
+    about {
+      text
+    }
+  }
+}
 
 `
 
 
-export {GET_ARTICLES,GET_ATHOR};
+export {GET_ARTICLES,GET_ATHOR,GET_AUTHOR_INFO};
