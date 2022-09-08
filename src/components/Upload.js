@@ -1,8 +1,15 @@
+import { useMutation } from '@apollo/client';
 import React,{useState} from 'react';
+import { UPLOAD_AUTHOR } from '../graphql/mutation';
 
 
 const Upload = () => {
     const [photoid,setPhotoId]=useState()
+    const [name,setName]=useState()
+    const [about,setAbout]=useState()
+
+    const [UploadAuthor,{loading,data,error}]=useMutation(UPLOAD_AUTHOR,{variables:{name,about,slug:name,id:photoid}})
+  
     //for get file
     const [file,setFile]=useState();
     //for upload file in cms graph
@@ -19,12 +26,15 @@ const Upload = () => {
           }).then((response)=>response.json())
           .then((data)=>{
             console.log(data);
+            setPhotoId(data.id)
            
         
             
           })
           
     }
+
+   
     
    
     
@@ -35,16 +45,24 @@ const Upload = () => {
      
     }
    const send=  ()=>{
+
              uploadPhoto(file);
 
             
    }
-  
+   const clickHandler= ()=>{
+        UploadAuthor()
+    }
+    console.log(error);
     return (
         <div>
             <input onChange={changeHandler} type="file"  name="filename"/>
+            <input onChange={(e)=>setName(e.target.value)} type="text"  name="filename"/>
+            <textarea  onChange={(e)=>setAbout(e.target.value)} type="textaria"  name="filename"/>
+            
             
             <button onClick={send} >upload</button>
+            <button onClick={clickHandler} >send</button>
            
 
             

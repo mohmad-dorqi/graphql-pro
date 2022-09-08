@@ -21,7 +21,7 @@ const AuthorPage = () => {
                   <Typography component='h3' variant='h3' mt={4}>{data.athor.name}</Typography>
                 </Grid>
                 <Grid item xs={12} mt={7}>
-                    {data.athor.about.text}
+                    {data.athor.about}
 
                 </Grid>
             </Grid>
