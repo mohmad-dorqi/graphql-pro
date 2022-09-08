@@ -4,11 +4,10 @@ import { UPLOAD_AUTHOR } from '../graphql/mutation';
 
 
 const Upload = () => {
-    const [photoid,setPhotoId]=useState()
+    //const [photoid,setPhotoId]=useState()
     const [name,setName]=useState()
     const [about,setAbout]=useState()
 
-    const [UploadAuthor,{loading,data,error}]=useMutation(UPLOAD_AUTHOR,{variables:{name,about,slug:name,id:photoid}})
   
     //for get file
     const [file,setFile]=useState();
@@ -26,8 +25,8 @@ const Upload = () => {
           }).then((response)=>response.json())
           .then((data)=>{
             console.log(data);
-            setPhotoId(data.id)
-           
+          //  setPhotoId(data.id)
+         
         
             
           })
@@ -35,25 +34,21 @@ const Upload = () => {
     }
 
    
+    const [UploadAuthor,{loading,data,error}]=useMutation(UPLOAD_AUTHOR,{variables:{name,about,slug:name}})
     
    
     
   
-    const changeHandler=(event)=>{
-        
-               setFile(event.target.files[0]);
-     
+    const changeHandler=(event)=>{ 
+        setFile(event.target.files[0]);
     }
    const send=  ()=>{
-
-             uploadPhoto(file);
-
-            
+       uploadPhoto(file);
    }
    const clickHandler= ()=>{
         UploadAuthor()
     }
-    console.log(error);
+   
     return (
         <div>
             <input onChange={changeHandler} type="file"  name="filename"/>
