@@ -1,7 +1,11 @@
 import React,{useState} from 'react';
-import { getPhotoId, uploadPhoto } from '../helpers/uploadPhoto';
+
 
 const Upload = () => {
+    const [photoid,setPhotoId]=useState()
+    //for get file
+    const [file,setFile]=useState();
+    //for upload file in cms graph
     const uploadPhoto=(file)=>{
 
         const form = new FormData();
@@ -19,12 +23,12 @@ const Upload = () => {
         
             
           })
+          
     }
     
    
     
-
-    const [file,setFile]=useState();
+  
     const changeHandler=(event)=>{
         
                setFile(event.target.files[0]);
@@ -33,12 +37,16 @@ const Upload = () => {
    const send=  ()=>{
              uploadPhoto(file);
 
-             console.log(getPhotoId()); 
+            
    }
+  
     return (
         <div>
             <input onChange={changeHandler} type="file"  name="filename"/>
+            
             <button onClick={send} >upload</button>
+           
+
             
         </div>
     );
