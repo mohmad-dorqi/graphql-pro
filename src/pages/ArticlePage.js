@@ -4,6 +4,7 @@
 import { GET_ARTICLE_INFO, GET_AUTHOR_INFO } from '../graphql/queryes';
 import { Avatar, Container, Grid, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Loder from '../components/Loder';
 
 
  
@@ -16,7 +17,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
     });
     console.log({data,loading,error});
 
-    if(loading) return <h1>loading...</h1>
+    if(loading) return <Loder/>
     return (
        <Container maxWidth='lg' >
            <Grid container >
@@ -28,8 +29,11 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
                     data &&<img src={data.article.photo[0].url} width='100%' height='70%'/>
                  }
               </Grid>
-              <Grid item xs={12} display='flex'>
-                  <Avatar src={data.artcle.author.photo[0].url}/>
+              <Grid item xs={12} display='flex' mb={3}>
+                  <Avatar src={data.article.athor.photo[0].url}/>
+                  <Typography component='h3' variant='h6' ml={2}>
+                     {data.article.athor.name}
+                  </Typography>
                  
               </Grid>
               <Grid item xs={12} >
