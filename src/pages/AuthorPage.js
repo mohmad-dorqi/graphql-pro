@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { GET_AUTHOR_INFO } from '../graphql/queryes';
 import { Avatar, Container, Grid, Typography } from '@mui/material';
 import Cart from '../shared/Card';
+import Loder from '../components/Loder';
 
 
 
@@ -13,7 +14,7 @@ const AuthorPage = () => {
     variables:{slug},
    });
    console.log(data);
-   if(loading)  return <h1>Loading</h1>
+   if(loading)  return <Loder/>
     return (
         <Container  maxWidth='lg' >
             <Grid container mt={10}>
