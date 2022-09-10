@@ -55,6 +55,27 @@ const GET_AUTHOR_INFO=gql`
   }
 }
 `
+const GET_ARTICLE_INFO=gql`
+    query getArticleInfo($slug:String!) {
+  article(where: {slug: $slug }) {
+    photo {
+      url
+    }
+    text {
+      text
+    }
+    writer
+    athor {
+      ... on Athor {
+        name
+        photo {
+          url
+        }
+      }
+    }
+  }
+}
+`
 
 
-export {GET_ARTICLES,GET_ATHOR,GET_AUTHOR_INFO};
+export {GET_ARTICLES,GET_ATHOR,GET_AUTHOR_INFO,GET_ARTICLE_INFO};
