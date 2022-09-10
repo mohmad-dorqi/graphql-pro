@@ -6,15 +6,17 @@ const Cart = ({athor,slug,photo,writer}) => {
    
     return (
        <Card  sx={{boxShadow:'rgba(0,0,0,0.1) 0px 4px 12px', borderRadius:4}} >
-        <CardHeader
-        avatar={
-            <Avatar src={athor.photo[0].url} sx={{marginLift:2}}/>}
-            title={
-                <Typography component='p' variant='p' color='text.secondary'>
-                            {athor.name}
-                </Typography>
-            }
-        />
+       {
+        athor &&   <CardHeader
+                avatar={
+                    <Avatar src={athor.photo[0].url} sx={{marginLift:2}}/>}
+                    title={
+                        <Typography component='p' variant='p' color='text.secondary'>
+                                    {athor.name}
+                        </Typography>
+                    }
+                />
+       }
         <CardMedia  component='img' height='194' image={photo[0].url} alt={slug}/>
         <CardContent>
             <Typography component='h3' variant='h6' color='text.primary'>

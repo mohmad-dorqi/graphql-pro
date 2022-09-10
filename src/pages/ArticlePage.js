@@ -1,5 +1,5 @@
  import React from 'react';
-import Upload from '../components/Upload';
+
 
  
  const ArticlePage = () => {
@@ -8,7 +8,7 @@ import Upload from '../components/Upload';
     return (
         <div>
             
-            <Upload/>
+          
            
         </div>
     );
