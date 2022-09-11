@@ -12,7 +12,7 @@ const Footer = () => {
         padding='10px'
         textAlign='center'
          mt={10}>
-          Created by Material|Graphql
+          Created by Material Ui|Graphql
         </Typography>
       </footer>
     );

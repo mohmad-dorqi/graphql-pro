@@ -56,8 +56,8 @@ const GET_AUTHOR_INFO=gql`
 }
 `
 const GET_ARTICLE_INFO=gql`
-    query getArticleInfo($slug:String!) {
-  article(where: {slug: $slug }) {
+   query getArticleInfo($slug: String!) {
+  article(where: {slug: $slug}) {
     photo {
       url
     }
@@ -73,8 +73,13 @@ const GET_ARTICLE_INFO=gql`
         }
       }
     }
+    comments {
+      name
+      comment
+    }
   }
 }
+
 `
 
 

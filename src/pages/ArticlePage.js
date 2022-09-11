@@ -5,6 +5,7 @@ import { GET_ARTICLE_INFO, GET_AUTHOR_INFO } from '../graphql/queryes';
 import { Avatar, Container, Grid, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Loder from '../components/Loder';
+import Comment from '../components/Comment';
 
 
  
@@ -47,6 +48,17 @@ import Loder from '../components/Loder';
                     {data.article.text.text}
 
                 </Typography>
+
+              </Grid>
+              <Grid item xs={12} mt={13}>
+                <Typography component='h3' variant='h4' fontWeight='700'>
+                  Comments
+                </Typography>
+                {
+                  data.article.comments.map((comment)=>(
+                     <Comment name={comment.name} title={comment.comment} />
+                  ))
+                }
 
               </Grid>
 
