@@ -56,7 +56,7 @@ import Comment from '../components/Comment';
                 </Typography>
                 {
                   data.article.comments.map((comment)=>(
-                     <Comment name={comment.name} title={comment.comment} />
+                     <Comment key={comment.name} name={comment.name} title={comment.comment} />
                   ))
                 }
 
