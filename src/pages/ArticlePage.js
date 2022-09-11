@@ -6,6 +6,7 @@ import { Avatar, Container, Grid, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Loder from '../components/Loder';
 import Comment from '../components/Comment';
+import CommentForm from '../components/CommentForm';
 
 
  
@@ -60,6 +61,9 @@ import Comment from '../components/Comment';
                   ))
                 }
 
+              </Grid>
+              <Grid item xs={12} mt={4}>
+                 <CommentForm/>
               </Grid>
 
            </Grid>
